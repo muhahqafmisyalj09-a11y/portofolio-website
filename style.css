@@ -1,0 +1,510 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0c1c33;
+    color: #110909;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    background-color: #111827;
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.logo {
+    color: rgb(233, 83, 83);
+    font-size: 24px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #60a5fa;
+}
+
+
+
+/* =========================
+   HOME
+========================= */
+.hero {
+    min-height: 90vh;
+    width: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 60px 10%;
+
+    background-image: url("background.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hello {
+    color: #f3f9ff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.hero-text h1 {
+    color: #f3f9ff;
+    font-size: 60px;
+    margin: 10px 0;
+}
+
+.hero-text h2 {
+    font-size: 28px;
+    color: #cdddf7;
+
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #efe9e9;
+
+    margin-bottom: 25px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    background: rgb(11, 3, 66);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+
+    min-width: 150px;
+}
+
+/* Muncul ketika mouse diarahkan ke Skills */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.dropdown-menu li:hover {
+    background-color: #0d0d0d;
+}
+
+.dropdown-menu a {
+    display: block;
+    text-decoration: none;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+    display: inline-block;
+
+    background-color: #2563eb;
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-circle {
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 8px solid white;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* =========================
+   SECTION
+========================= */
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 50px;
+    color: white;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+}
+
+.about-content h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.about-content p {
+    color: rgb(231, 227, 227);
+    margin-bottom: 15px;
+}
+
+.about-info {
+    background-color: rgb(11, 6, 6);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow:
+        0 5px 20px rgba(243, 9, 9, 0.08);
+}
+
+
+/* =========================
+   SKILLS
+   ========================= */
+
+.skills-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 50px 20px 70px;
+    box-sizing: border-box;
+
+    background-color: #101112;
+    border-radius: 25px;
+    margin-top: 120px;
+    margin-bottom: 150px;
+    padding-bottom: 100px;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.skill-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card h3 {
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #666;
+}
+
+
+/* =========================
+   PROJECT
+   ========================= */
+
+.project-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 50px 20px 70px;
+    box-sizing: border-box;
+
+    background-color: #000000;
+    border-radius: 25px;
+    margin-top: 120px;
+    padding-bottom: 100px;
+}
+
+.project-section .section-title {
+    color: white;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.project-card {
+    background-color: white;
+
+    flex: 1;
+    min-height: 300px;
+
+    padding: 35px;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.project-icon {
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+.project-card h3 {
+    color: black;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.project-card span {
+    display: inline-block;
+
+    background-color: #e5e5e5;
+    color: #1745d1;
+
+    padding: 9px 13px;
+    border-radius: 5px;
+
+    margin-right: 7px;
+    margin-top: 10px;
+}
+/* =========================
+   BACKGROUND BAGIAN PROYEK
+   ========================= */
+
+#proyek {
+    background: #000000 !important;
+    width: 100%;
+    padding: 60px 5%;
+    box-sizing: border-box;
+}
+
+/* Judul Proyek */
+#proyek .section-title {
+    color: white !important;
+    text-align: center;
+}
+
+/* Container kartu */
+#proyek .project-container {
+    display: flex;
+    justify-content: center;
+    gap: 27px;
+}
+
+/* Kartu tetap putih */
+#proyek .project-card {
+    background: white !important;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.contact-section h2 {
+    font-size: 22px;
+    margin-bottom: 3px;
+}
+
+.contact-section p {
+    display: inline-block;
+    color: #070505;
+    margin: 0px 8px;
+}
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-page .section {
+    flex: 1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+
+        text-align: center;
+
+        gap: 40px;
+    }
+
+    .hero-text h1 {
+        font-size: 45px;
+    }
+
+    .hero-text h2 {
+        font-size: 22px;
+    }
+
+    .profile-circle {
+        width: 200px;
+        height: 200px;
+
+        font-size: 80px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+#keahlian {
+    scroll-margin-top: 110px;
+}
+
+#proyek {
+    scroll-margin-top: 100px;
+}
