@@ -249,7 +249,163 @@ header {
         0 5px 20px rgba(243, 9, 9, 0.08);
 }
 
+.timeline-horizontal {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 40px auto 0;
+    gap: 15px;
+}
 
+.timeline-item {
+    position: relative;
+    flex: 0 0 220px;   /* lebar tetap 220px, tidak mengembang/menyusut */
+    width: 220px;
+    padding: 0 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.timeline-item::before,
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 8px; /* setengah tinggi dot (16px / 2) */
+    width: 50%;
+    height: 2px;
+    background: #ccc;
+    z-index: 1;
+}
+
+.timeline-item::before { left: 0; }
+.timeline-item::after  { right: 0; }
+
+.timeline-item:first-child::before { display: none; }
+.timeline-item:last-child::after  { display: none; }
+
+.timeline-item {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* biar urutan munculnya berjeda dikit tiap kartu */
+.timeline-item:nth-child(1) { transition-delay: 0s; }
+.timeline-item:nth-child(2) { transition-delay: 0.15s; }
+.timeline-item:nth-child(3) { transition-delay: 0.3s; }
+.timeline-item:nth-child(4) { transition-delay: 0.45s; }
+.timeline-dot {
+    width: 16px;
+    height: 16px;
+    background: #1e2a3a;
+    border: 3px solid #0a1628;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #ccc;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-content {
+    background: #f4f4f4;
+    padding: 18px 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.badge {
+    display: inline-block;
+    background: #1e2a3a;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.timeline-content h3 {
+    color: #222;
+    margin: 6px 0 4px;
+    font-size: 16px;
+}
+
+.timeline-content p {
+    margin: 2px 0;
+    color: #666;
+    font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    .timeline-horizontal {
+        flex-direction: column;
+        max-width: 500px;
+    }
+
+    .timeline-item::before,
+    .timeline-item::after {
+        display: none;
+    }
+
+    .timeline-item {
+        text-align: left;
+        padding: 0 0 30px 30px;
+    }
+
+    .timeline-dot {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 0;
+    }
+}
+
+.dot-active {
+    background: #2563eb;
+    box-shadow: 0 0 0 2px #60a5fa;
+}
+
+.badge-active {
+    background: #2563eb;
+}
+
+.timeline-horizontal {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 40px auto 0;
+    gap: 10px;
+}
+
+.pendidikan-step {
+    text-align: center;
+    padding: 10px 0;
+    opacity: 0;
+    animation: fadeInStep 0.6s ease forwards;
+}
+
+.pendidikan-step:nth-child(1) { animation-delay: 0.2s; }
+.pendidikan-step:nth-child(3) { animation-delay: 0.6s; }
+.pendidikan-step:nth-child(5) { animation-delay: 1s; }
+
+@keyframes fadeInStep {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* =========================
    SKILLS
    ========================= */
@@ -508,3 +664,16 @@ footer {
 #proyek {
     scroll-margin-top: 100px;
 }
+
+.contact-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
